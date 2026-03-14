@@ -1,36 +1,71 @@
 package model;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
-public class HotelStay extends TourService {
+public final class HotelStay extends TourService {
+
     private int stars;
     private int nights;
-    RoomType roomType;
+    private RoomType roomType;
+
+    public HotelStay() {
+    }
+
+    public HotelStay(Integer x, String name, BigDecimal price, LocalDate from, LocalDate to, int stars, int nights, RoomType roomType) {
+        super(x, name, price, from, to);
+        this.stars = stars;
+        this.nights = nights;
+        this.roomType = roomType;
+    }
 
     @Override
     public BigDecimal calculateTotalPrice(int participants) {
-        return getPrice()
-                .multiply(BigDecimal.valueOf(participants))
-                .multiply(getNightMultiplier().multiply(getStarMultiplier()));
+        var newPr = getPrice().multiply(BigDecimal.valueOf(participants));
+        double hadN;
+        double starsMulti = 1.0 + ((double) stars) / 10;
+        hadN = switch (nights) {
+            case 0 -> 1.0;
+            case 1 -> 1.2;
+            case 2 -> 1.4;
+            case 3 -> 1.6;
+            default -> 2.0;
+        };
+        return newPr.multiply(new BigDecimal(hadN)).multiply(BigDecimal.valueOf(starsMulti));
     }
 
-    private BigDecimal getStarMultiplier() {
-        return switch (stars){
-            case 0 -> new BigDecimal("1.0");
-            case 1 -> new BigDecimal("1.1");
-            case 2 -> new BigDecimal("1.2");
-            case 3 -> new BigDecimal("1.3");
-            case 4 -> new BigDecimal("1.4");
-            case 5 -> new BigDecimal("1.5");
-            default -> BigDecimal.ZERO;
-        };
+    public void setStars(int stars) {
+        this.stars = stars;
     }
-    private BigDecimal getNightMultiplier() {
-        return switch (nights){
-            case 1 -> new BigDecimal("1.2");
-            case 2 -> new BigDecimal("1.4");
-            case 3 -> new BigDecimal("1.6");
-            default -> new BigDecimal("2.0");
-        };
+
+    public int getStars() {
+        return stars;
+    }
+
+    public int getNights() {
+        return nights;
+    }
+
+    public void setNights(int nights) {
+        this.nights = nights;
+    }
+
+    public RoomType getRoomType() {
+        return roomType;
+    }
+
+    public void nights(int nights) {
+        this.nights = nights;
+    }
+
+    public void setRoomType(RoomType room) {
+        this.roomType = room;
+    }
+
+    @Override
+    public String toString() {
+        return "User{Сколько звезд=\"" + stars + "\", Сколько ночей=\"" + nights + "\", Тип комнаты=\""
+                + (roomType != null ? roomType.name() : "null") + "\", X=\"" + getId() + "\", Name=\""
+                + getName() + "\", From=\"" + getFrom() + "\", To=\"" + getTo() + "\", Price=\"" + getPrice() + "\"}";
     }
 }
