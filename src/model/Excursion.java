@@ -1,60 +1,48 @@
 package model;
 
 import java.math.BigDecimal;
-import java.time.Duration;
-import java.time.format.DateTimeFormatter;
-import java.text.DecimalFormat;
+import java.math.MathContext;
+import java.time.LocalDate;
 
-public class Excursion extends TourService {
-    private String guidName;
-    private Duration duration;
-    private Difficulty difficulty;
-
-    @Override
-    public BigDecimal calculateTotalPrice(int participants) {
-        BigDecimal basePrice = getPrice()
-                .multiply(BigDecimal.valueOf(participants))
-                .multiply(difficulty.getMultiplier());
-
-        if (participants > 10) {
-            return basePrice.multiply(BigDecimal.valueOf(0.9));
-        } else {
-            return basePrice;
-        }
-    }
+public final class Excursion extends TourService {
+    String where;
+    int day;
 
     @Override
     public String toString() {
-        String durationStr = (duration != null)
-                ? String.format("%d ч. %d мин.", duration.toHours(), duration.toMinutesPart())
-                : "null";
-
-        String difficultyStr = (difficulty != null) ? difficulty.name() : "null";
-
-        return "Excursion{" +
-                "guidName=\"" + guidName + "\"" +
-                ", duration=\"" + durationStr + "\"" +
-                ", difficulty=\"" + difficultyStr + "\"" +
-                "}";
+        return "User{Где экскурсия=\"" + where + "\", Сколько дней экскурсия=\"" + day + "\", X=\"" + getId() + "\", Name=\"" + getName() + "\", From=\"" + getFrom() + "\", To=\"" + getTo() + "\", Price=\"" + getPrice() + "\"}";
+    }
+    public String getWhere() {
+        return where;
     }
 
-    public void setGuidName(String guidName) {
-        this.guidName = guidName;
+    public int getDay() {
+        return day;
     }
 
-    public Duration getDuration() {
-        return duration;
+    public void setWhere(String where) {
+        this.where = where;
     }
 
-    public void setDuration(Duration duration) {
-        this.duration = duration;
+    public void setDay(int day) {
+        this.day = day;
+    }
+    public Excursion(Integer x, String name, BigDecimal price, LocalDate from, LocalDate to, String where, int day) {
+        super(x, name, price, from, to);
+        this.where = where;
+        this.day = day;
     }
 
-    public Difficulty getDifficulty() {
-        return difficulty;
+    public Excursion() {
+        super();
+        this.where = null;
+        this.day = 0;
     }
-
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
+    @Override
+    public BigDecimal calculateTotalPrice(int participants) {
+        var discount = getPrice().multiply(BigDecimal.valueOf(participants));
+        return participants > 10
+                ? discount.subtract(discount.divide(BigDecimal.valueOf(10), MathContext.DECIMAL128))
+                : discount;
     }
 }
