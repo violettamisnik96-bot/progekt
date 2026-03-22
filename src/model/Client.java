@@ -89,4 +89,7 @@ public class Client {
         return "User{ClientId=\"" + clientId + "\", FullName=\"" + fullName + "\", Email=\"" + email + "\", Phone=\""
                 + phone + "\", PassportNumber=\"" + getMaskedPassportNumber() + "\", LoyaltyPoints=\"" + loyaltyPoints + "\"}";
     }
+
+    public void addBonusPoints(double bonusPoints) {
+    }
 }
