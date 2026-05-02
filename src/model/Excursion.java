@@ -8,6 +8,9 @@ public final class Excursion extends TourService {
     String where;
     int day;
 
+    public <T> Excursion(int id, String name, BigDecimal price, T from, T to, String guideName, String excursionType, boolean lunchIncluded) {
+    }
+
     @Override
     public String toString() {
         return "User{Где экскурсия=\"" + where + "\", Сколько дней экскурсия=\"" + day + "\", X=\"" + getId() + "\", Name=\"" + getName() + "\", From=\"" + getFrom() + "\", To=\"" + getTo() + "\", Price=\"" + getPrice() + "\"}";
