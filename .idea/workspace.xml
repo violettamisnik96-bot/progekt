@@ -5,9 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7339bff-9ed8-40a0-ae70-88ccc98787bf" name="Changes" comment="Merge remote-tracking branch 'origin/main'">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/progekt.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Архив WinRAR.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/laba/model/Flight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/laba/model/TourService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exception/TourServiceValidationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/psu.by/db/ConnectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/psu.by/db/JdbcHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Booking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/BookingStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Difficulty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Excursion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Flight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/HotelStay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/RoomType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/TourService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +39,7 @@
       <list>
         <option value="Enum" />
         <option value="Exception" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -46,19 +64,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Bootstrap.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.gogo.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Maven.tour-service [clean].executor": "Run",
+    "Maven.tour-service [test].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/IdeaProjects/git",
-    "onboarding.tips.debug.path": "C:/Users/User/IdeaProjects/git/progekt/target/src/Main.java",
+    "onboarding.tips.debug.path": "C:/Users/User/IdeaProjects/git/progekt/dto/src/Main.java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.customizations"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -66,16 +92,30 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Bootstrap">
+    <configuration name="Bootstrap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by.psu.Bootstrap" />
+      <module name="tour-agency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.psu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="progekt" />
+      <module name="tour-agency" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Bootstrap" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -203,7 +243,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777709320274</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Merge remote-tracking branch 'origin/main'">
+      <option name="closed" value="true" />
+      <created>1777710356885</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1777710356885</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Merge remote-tracking branch 'origin/main'">
+      <option name="closed" value="true" />
+      <created>1777710363113</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1777710363113</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,6 +288,16 @@
           <properties class="exception.TourServiceValidationException" package="exception" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dto/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/service/ExcursionService.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
